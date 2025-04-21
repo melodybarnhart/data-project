@@ -14,7 +14,7 @@ The visualizations cover:
 
 ## 🛠️ Getting Started
 
-No special dependencies or installation required.
+Remember to download pandas and plotly to start off with!
 
 You can clone the repo and open the data/visualization files directly:
 ```bash
