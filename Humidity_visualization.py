@@ -2,7 +2,6 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Read and process the CSV data
 file_path = '../data/humidity.csv'
 with open(file_path, 'r') as file:
     reader = csv.reader(file)
@@ -24,7 +23,7 @@ df['day_offset'] = df['time'].dt.day - 18
 
 df['x_position'] = df['year'] + (df['day_offset'] * 0.2)
 
-plt.figure(figsize=(12, 6))  # Set figure size
+plt.figure(figsize=(12, 6)) 
 plt.scatter(df['x_position'], df['rhum'], color='black', alpha=0.7, s=30, label='Humidity')
 plt.xlabel('Year')
 plt.ylabel('Humidity')
@@ -32,7 +31,7 @@ plt.title('Humidity Levels (July 18–22 Only)')
 plt.legend()
 plt.xticks(df['year'].unique())
 plt.grid(axis='x', linestyle='--', alpha=0.5)
-plt.savefig('humidity_plot.png')  # Save the plot to a file
+plt.savefig('humidity_plot.png') 
 
 html_content = f"""
 <!DOCTYPE html>
