@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Predictor</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>July 20 Weather Prediction</title>
+  <title>Sandusky Weather Project</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #e6f0fa;
       color: #333;
@@ -19,12 +23,28 @@
       color: white;
       padding: 30px 20px;
       text-align: center;
+      padding: 40px;
+      background-color: #f0f0f0;
     }
 
 
     h1 {
+      color: #333;
       margin: 0;
       font-size: 2.5em;
+    }
+
+
+    nav {
+      margin-top: 15px;
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
     }
 
 
@@ -34,45 +54,46 @@
     }
 
 
-    .prediction-box {
-      margin: 40px auto;
-      padding: 25px;
-      max-width: 800px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    h2 {
+      font-size: 2em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+    a {
+      color: #0366d6;
     }
 
 
     ul {
       list-style: none;
       padding: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
     }
 
 
     ul li {
-      padding: 8px 0;
-      font-size: 1.1em;
+      margin: 10px 0;
     }
 
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background-color: #005f73;
-      color: white;
+    ul li a {
+      color: #0077cc;
+      font-size: 1.2em;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
     }
 
 
-    .back-btn:hover {
-      background-color: #003f4e;
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+
+    .prediction-box {
+      margin: 50px auto;
+      padding: 25px;
+      max-width: 800px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
 
@@ -86,27 +107,64 @@
   </style>
 </head>
 <body>
+  <h1>Welcome to Weather Predictor</h1>
+  <p>Using data from the past 10 years, we will predict the weather for July 2025. 🚀</p>
+
+
+  <h2>Explore The Charts</h2>
+  <ul>
+    <li><a href="charts/wind_speed_plot.html">Wind Speed💨</a></li>
+    <li><a href="charts/wind_direction.html">Wind Direction🌬️</a></li>
+    <li><a href="charts/humidity.html">Humidity🔥</a></li>
+    <li><a href="charts/water_temp.html">Water Temperature🌊</a></li>
+    <li><a href="charts/precipitation_visualization.html">Precipitation⛆</a></li>
+    <li><a href="charts/temps_visualization.html">Temperature🌡️</a></li>
+    <li><a href="charts/extreme_heat_plot.html">Severe Weather⛈️</a></li>
+    <a href="prediction.html">Go to Weather Prediction</a>
+  </ul>
+
+
   <header>
-    <h1>Weather Prediction: July 20, 2025</h1>
+    <h1>Sandusky Weather Project</h1>
+    <nav>
+      <a href="#">Home</a>
+    </nav>
   </header>
 
 
   <main>
+    <h2>Explore 10 Years of Weather Data</h2>
+    <p>Discover patterns and predictions based on historical weather from July 18–22 in Sandusky, Ohio.</p>
+
+
+    <ul>
+      <li><a href="charts/wind_speed_plot.html">Wind Speed 💨</a></li>
+      <li><a href="charts/wind_direction.html">Wind Direction 🌬️</a></li>
+      <li><a href="charts/humidity.html">Humidity 🔥</a></li>
+      <li><a href="charts/water_temp.html">Water Temperature 🌊</a></li>
+      <li><a href="charts/precipitation_visualization.html">Precipitation ⛆</a></li>
+      <li><a href="charts/temps_visualization.html">Temperature 🌡️</a></li>
+      <li><a href="charts/extreme_heat_plot.html">Severe Weather ⛈️</a></li>
+    </ul>
+
+
     <div class="prediction-box">
-      <p>Based on 10 years of historical weather data for Sandusky, Ohio, here is our prediction for <strong>July 20, 2025</strong>:</p>
-      <ul>
+      <h2>Prediction for July 20</h2>
+      <p>
+        After analyzing 10 years of data from July 20 in Sandusky, Ohio, we observed a consistent pattern of moderately high temperatures ranging between 82°F and 87°F, with frequent midday humidity and occasional rainstorms. Based on this, we predict the following for <strong>July 20, 2025</strong>:
+      </p>
+      <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
         <li><strong>High Temperature:</strong> 85°F</li>
         <li><strong>Low Temperature:</strong> 62°F</li>
         <li><strong>Chance of Rain:</strong> 50%</li>
         <li><strong>Humidity:</strong> 75%</li>
-        <li><strong>Wind:</strong> Southwest at 10 mph</li>
-        <li><strong>Lake Water Temp:</strong> 74°F</li>
+        <li><strong>Wind:</strong> SW at 10 mph</li>
+        <li><strong>Lake Water Temp:</strong> Around 74°F</li>
       </ul>
-      <p>This prediction is based on consistent trends found across a decade of weather records during the same time frame.</p>
+      <p>
+        These numbers reflect recurring historical trends, especially the spike in warm, humid air during mid-July.
+      </p>
     </div>
-
-
-    <a href="index.html" class="back-btn">Go Back to Home</a>
   </main>
 
 
@@ -115,5 +173,6 @@
   </footer>
 </body>
 </html>
+
 
 
