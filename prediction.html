@@ -3,11 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction</title>
+    <title>5-Day Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Prediction</h1>
+    <header>
+        <h1>5-Day Weather Forecast</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="weather_prediction.html" class="weather-link">Weather Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Weather Forecast</h2>
+
+        <!-- 5-Day Forecast Container -->
+        <div class="forecast-container">
+            <!-- Day 1 -->
+            <div class="forecast-card">
+                <h3>Day 1</h3>
+                <p class="date">2025-04-25</p>
+                <p class="temperature">High: 75°F | Low: 60°F</p>
+                <p class="description">Sunny</p>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="forecast-card">
+                <h3>Day 2</h3>
+                <p class="date">2025-04-26</p>
+                <p class="temperature">High: 72°F | Low: 58°F</p>
+                <p class="description">Partly Cloudy</p>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="forecast-card">
+                <h3>Day 3</h3>
+                <p class="date">2025-04-27</p>
+                <p class="temperature">High: 78°F | Low: 64°F</p>
+                <p class="description">Clear</p>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="forecast-card">
+                <h3>Day 4</h3>
+                <p class="date">2025-04-28</p>
+                <p class="temperature">High: 80°F | Low: 65°F</p>
+                <p class="description">Cloudy</p>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="forecast-card">
+                <h3>Day 5</h3>
+                <p class="date">2025-04-29</p>
+                <p class="temperature">High: 85°F | Low: 68°F</p>
+                <p class="description">Rainy</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WeatherApp. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
