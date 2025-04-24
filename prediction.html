@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-Day Weather Forecast</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -21,48 +20,49 @@
     <main>
         <h2>Weather Forecast</h2>
 
-        <!-- 5-Day Forecast Container -->
-        <div class="forecast-container">
-            <!-- Day 1 -->
-            <div class="forecast-card">
-                <h3>Day 1</h3>
-                <p class="date">2025-07-18</p>
-                <p class="temperature">High: 75°F | Low: 60°F</p>
-                <p class="description">Sunny</p>
-            </div>
-
-            <!-- Day 2 -->
-            <div class="forecast-card">
-                <h3>Day 2</h3>
-                <p class="date">2025-07-19</p>
-                <p class="temperature">High: 72°F | Low: 58°F</p>
-                <p class="description">Partly Cloudy</p>
-            </div>
-
-            <!-- Day 3 -->
-            <div class="forecast-card">
-                <h3>Day 3</h3>
-                <p class="date">2025-07-20</p>
-                <p class="temperature">High: 78°F | Low: 64°F</p>
-                <p class="description">Clear</p>
-            </div>
-
-            <!-- Day 4 -->
-            <div class="forecast-card">
-                <h3>Day 4</h3>
-                <p class="date">2025-07-21</p>
-                <p class="temperature">High: 80°F | Low: 65°F</p>
-                <p class="description">Cloudy</p>
-            </div>
-
-            <!-- Day 5 -->
-            <div class="forecast-card">
-                <h3>Day 5</h3>
-                <p class="date">2025-07-22</p>
-                <p class="temperature">High: 85°F | Low: 68°F</p>
-                <p class="description">Rainy</p>
-            </div>
-        </div>
+        <!-- 5-Day Forecast Table -->
+        <table border="1" cellpadding="10" cellspacing="0" style="width:100%;">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Temperature</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Day 1</td>
+                    <td>2025-07-18</td>
+                    <td>High: 75°F | Low: 60°F</td>
+                    <td>Sunny</td>
+                </tr>
+                <tr>
+                    <td>Day 2</td>
+                    <td>2025-07-19</td>
+                    <td>High: 72°F | Low: 58°F</td>
+                    <td>Partly Cloudy</td>
+                </tr>
+                <tr>
+                    <td>Day 3</td>
+                    <td>2025-07-20</td>
+                    <td>High: 78°F | Low: 64°F</td>
+                    <td>Clear</td>
+                </tr>
+                <tr>
+                    <td>Day 4</td>
+                    <td>2025-04-21</td>
+                    <td>High: 80°F | Low: 65°F</td>
+                    <td>Cloudy</td>
+                </tr>
+                <tr>
+                    <td>Day 5</td>
+                    <td>2025-07-22</td>
+                    <td>High: 85°F | Low: 68°F</td>
+                    <td>Rainy</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer>
