@@ -20,6 +20,6 @@ fig = px.bar(
 
 fig.update_layout(barmode='group')
 
-pio.write_html(fig, file="extreme_heat_plot.html", auto_open=False)
+fig.write_html("extreme_heat.html")
 
 # fig.show()
