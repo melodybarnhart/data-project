@@ -1,46 +1,46 @@
 import pandas as pd
-import plotly.express as px
+import plotly.graph_objects as go
 
-# Load the CSV file into a DataFrame
-df = pd.read_csv('data/Water Temperatures.csv')
 
-# Convert the DATE column to a datetime format
-df['DATE'] = pd.to_datetime(df['DATE'])
+df = pd.read_csv('Water Temperatures.csv', parse_dates=['DATE'])
+df_filtered = df[(df['DATE'].dt.month == 7) & (df['DATE'].dt.day >= 18) & (df['DATE'].dt.day <= 22)].copy()
+df_filtered['Year'] = df_filtered['DATE'].dt.year
 
-# Ensure TEMP is a float
-df['Temp'] = df['TEMP'].astype(float)
 
-# Filter the DataFrame for dates between July 18–22 in all years
-start_date = '07-18'
-end_date = '07-22'
-df = df[df['DATE'].dt.strftime('%m-%d').between(start_date, end_date)]
+df_avg = df_filtered.groupby('Year')['TEMP'].mean().reset_index()
 
-# Extract year and day for visualization
-df['Year'] = df['DATE'].dt.year
-df['Day'] = df['DATE'].dt.strftime('%m-%d')
 
-# Create the bar chart
-fig = px.bar(
-    df,
-    x='Day',
-    y='Temp',  # Corrected to reference 'Temp' instead of 'VALUE'
-    color='Year',
-    title='Water Temperature for July 18–22 Across Years',
-    labels={'Day': 'Date (MM-DD)', 'Temp': 'Water Temperature (°F)'}
-)
+colorscale = 'RdYlBu_r'
 
-# Customize layout and hide the y-axis values
+fig = go.Figure()
+
+fig.add_trace(go.Bar(
+    x=df_avg['Year'],
+    y=df_avg['TEMP'],
+    marker=dict(
+        color=df_avg['TEMP'],
+        colorscale='RdYlBu_r',
+        colorbar=dict(
+            title=dict(text='Avg Temp (°F)', font=dict(color='white')),
+            tickfont=dict(color='white')
+        ),
+    ),
+    name='5-Day Avg Temp'
+))
+
+
+start_year = df_avg['Year'].min()
+end_year = df_avg['Year'].max()
+
 fig.update_layout(
-    xaxis_title='Date (MM-DD)',
-    yaxis_title='Water Temperature (°F)',
-    bargap=0.2,
-    yaxis=dict(
-        showticklabels=False,  # Hides y-axis tick labels
-        showgrid=False,        # Optionally hides the grid lines
-    )
+    title=f'Average Water Temperatures (July 18–22, {start_year}–{end_year})',
+    title_font=dict(color='white'),
+    plot_bgcolor='black',
+    paper_bgcolor='black',
+    font=dict(color='white'),
+    xaxis=dict(title='Year', tickmode='linear', dtick=1, color='white'),
+    yaxis=dict(title='Temperature (°F)', color='white')
 )
 
-# Show the plot
 fig.show()
-
-fig.write_html("water_temp.html")
+fig.write_html("water_temperatures.html")
