@@ -1,16 +1,16 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-
+# Load and filter the data
 df = pd.read_csv('Water Temperatures.csv', parse_dates=['DATE'])
 df_filtered = df[(df['DATE'].dt.month == 7) & (df['DATE'].dt.day >= 18) & (df['DATE'].dt.day <= 22)].copy()
 df_filtered['Year'] = df_filtered['DATE'].dt.year
 
-
+# Compute average temp per year
 df_avg = df_filtered.groupby('Year')['TEMP'].mean().reset_index()
 
-
-colorscale = 'RdYlBu_r'
+# Create a bar chart with gradient coloring
+colorscale = 'RdYlBu_r'  # red (hot) to blue (cool), reversed
 
 fig = go.Figure()
 
@@ -29,6 +29,7 @@ fig.add_trace(go.Bar(
 ))
 
 
+# Set dynamic title
 start_year = df_avg['Year'].min()
 end_year = df_avg['Year'].max()
 
